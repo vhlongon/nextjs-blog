@@ -1,4 +1,5 @@
 import { css, Global } from "@emotion/react";
+import ErrorBoundary from "../components/ErrorBoundary";
 
 const globalStyles = css`
   html,
@@ -34,7 +35,9 @@ const App = ({ Component, pageProps }) => {
   return (
     <>
       <Global styles={globalStyles} />
-      <Component {...pageProps} />
+      <ErrorBoundary>
+        <Component {...pageProps} />
+      </ErrorBoundary>
     </>
   );
 };

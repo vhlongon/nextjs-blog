@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 const colors = {
   success: "green",
   error: "red",
+  loading: "orange",
 };
 
 const Wrapper = styled.div`
