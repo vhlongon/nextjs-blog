@@ -45,7 +45,7 @@ const Profile = ({ userName }) => {
   );
 
   if (error) {
-    const { message, ...rest } = serializeError(error);
+    const { message } = serializeError(error);
     return (
       <Container>
         <Alert type="error">Something went wrong: {message}</Alert>
@@ -61,6 +61,7 @@ const Profile = ({ userName }) => {
     );
   }
 
+  console.log(data);
   return (
     <Container>
       {data.message ? (
@@ -69,7 +70,7 @@ const Profile = ({ userName }) => {
         <Alert type="success">
           <h1>{data.name}</h1>
           <HeaderHomeImage
-            src="/images/profile.png"
+            src={data.avatar_url}
             css={utilStyles.borderCircle}
             alt={name}
           />
@@ -89,7 +90,8 @@ const Profile = ({ userName }) => {
               👨‍💻 Following: <UserAttribute>{data.following} </UserAttribute>
             </ListItem>
             <ListItem>
-              🌍 Location: <UserAttribute>{data.location} </UserAttribute>
+              🌍 Location:{" "}
+              <UserAttribute>{data.location || "---"} </UserAttribute>
             </ListItem>
           </List>
         </Alert>
