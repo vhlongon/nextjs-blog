@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Head from "next/head";
 import Layout from "../../components/Layout";
+import Alert from "../../components/Alert";
 
 const FirstPost = () => {
   return (
@@ -14,6 +15,9 @@ const FirstPost = () => {
           <a>Back to home</a>
         </Link>
       </h2>
+      <Alert type="success">Success</Alert>
+      <Alert type="error">Error</Alert>
+      <Alert>Neutral</Alert>
     </Layout>
   );
 };
