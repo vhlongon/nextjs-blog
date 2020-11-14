@@ -1,19 +1,22 @@
-import Link from "next/link";
 import Head from "next/head";
+import Layout, { siteTitle } from "../components/Layout";
+import * as utilStyles from "../styles/utils";
 
-export default function Home() {
+const Home = () => {
   return (
-    <div className="container">
+    <Layout home>
       <Head>
-        <title>Nextjs blog</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>{siteTitle}</title>
       </Head>
-
-      <main>
-        <h1 className="title">
-          Learn <Link href="/posts/first-post">Next.js!</Link>
-        </h1>
-      </main>
-    </div>
+      <section className={utilStyles.headingMd}>
+        <p>Front-end developer 🇧🇷 🇸🇪</p>
+        <p>
+          (Learning how to use nextjs{" "}
+          <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
+        </p>
+      </section>
+    </Layout>
   );
-}
+};
+
+export default Home;
